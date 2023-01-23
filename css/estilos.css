@@ -1,0 +1,222 @@
+/* reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*estilos generales*/
+
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(207,207,227,0.04665616246498594) 35%, rgba(0,212,255,1) 100%);  
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/*estilos del header */
+
+header{
+    display: none;
+}
+
+/* estilos de main */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+main h2{
+    margin: 1rem;
+}
+
+main .boton{
+    background-color: #51b0df;
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    color: whitesmoke;
+    box-shadow: 3px 3px 3px black; /* en las sombras si se trabaja con px */ /* el tercer valor de la sombra hace un shadow*/
+}
+
+main img{
+    width: 60%;
+}
+
+main h2 span{
+    display: block;
+}
+
+/* los tamaños de las imágenes es mejor trabajarlos con porcentajes */
+
+/* Unidades de medida
+    1 rem = 16px
+    2 rem = 32px
+    1.5 rem = 24px
+    */
+
+/*  em toma el tamaño del contenedor más próximo que tenga
+    em = 16px
+    */
+
+
+/* estilos de section */
+
+section{
+    display: none;
+}
+
+/* estilos de footer */
+
+footer h4{
+    text-align: center;
+}
+
+/* pantallas de tablet */
+
+@media screen and (min-width: 600px){
+    /* estilos de header */
+
+    header{
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0.7rem;
+        align-items: center;
+        
+    }
+
+    header nav ul{
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        
+    }
+
+    header nav ul li{
+        font-weight: bold;
+    }
+
+        /* estilos de section */
+
+    section{
+        display: block;
+        display: flex;
+        background-color: #bee0f1;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    section div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation-name: animacion-div;   
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+
+    @keyframes animacion-div {
+       
+        0%{
+            transform: scale(0.5);
+            background-color: black;
+        }
+
+        50%{
+            transform: scale(0.8);
+            background-color: red;
+        }
+
+        100%{
+            transform: scale(1.2);
+            background-color: yellow;
+        }
+    }
+
+    section div img{
+        width: 20%;
+    }
+
+}
+
+/* estilos de pantallas de escritorio */
+
+@media screen and (min-width: 1024px){
+   
+    /* estilos del meni */
+
+    header nav ul li{
+        transition: 3s;
+    }
+   header nav ul li:hover{
+    transform: rotate(360deg);
+    transition: 3s;
+    box-shadow: 1px 1px 2px black
+
+   }
+   
+    /* estilos de main*/
+
+    main{
+        width: 1000px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+
+        grid-template-areas: 
+            "p img"
+            "h2 img"
+            "p-dos img"
+            "boton img";
+        justify-content: center;
+        justify-items: center;
+
+
+    }
+
+    main h2{
+        grid-area: h2;
+    }
+
+    main img{
+        grid-area: img;
+    }
+
+    main img:hover{
+        filter: drop-shadow(20px 20px 20px);
+    }
+    main p{
+        grid-area: p;
+    }
+
+    main .p-dos{
+        grid-area: p-dos;
+        width: 70%;
+    }
+
+    main .boton{
+        grid-area: boton;
+    }
+
+    main .boton:hover{
+        box-shadow: 2px 2px 3px black;
+    }
+
+    /* estilos de footer */
+
+    footer{
+        margin-top: 1.5rem;
+    }
+}
+
+
+
+
